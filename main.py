@@ -1,11 +1,7 @@
-import logging
-logging.basicConfig(level=logging.DEBUG)
-from flask import Flask, request
-import db, query
+from flask import Flask
 from controllers import customers, employees, orders, services
 
 app = Flask(__name__)
-log = logging.getLogger("flask-app")
 
 # employee services
 app.add_url_rule("/employee", methods=['GET'], view_func=employees.get_employees)
